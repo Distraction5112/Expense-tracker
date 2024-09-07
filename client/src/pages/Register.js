@@ -20,6 +20,7 @@ function Register() {
             await axios.post('api/users/register',values);
             message.success('Registration Successful');
             setLoading(false);
+            navigate('/login');
         } catch (error) {
             message.error('Something went wrong');
             setLoading(false);

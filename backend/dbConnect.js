@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 //pass=process.env.PASSWORD
-const url = process.env.MONGODB_URI;
+const url = "mongodb+srv://suniljdh2021:sunil123@check-spense.yygzbwv.mongodb.net/?retryWrites=true&w=majority&appName=check-spense";
 
 mongoose.connect(url,{useUnifiedTopology: true});
 

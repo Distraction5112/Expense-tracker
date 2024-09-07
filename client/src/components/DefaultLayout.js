@@ -8,20 +8,22 @@ function DefaultLayout(props) {
   const user=JSON.parse(localStorage.getItem('checkSpense'));
   const navigate=useNavigate();
   
-  const menu = (
-    <Menu
-      items={[
-        {
-          label: (
-            <li onClick={()=>{
-              localStorage.removeItem('checkSpense');
-              navigate("/login");
-            }}>Log Out</li>
-          ),
-        },
-      ]}
-    />
-  );
+
+  const items = [
+    {
+      key: "1",
+      label: (
+        <li
+          onClick={() => {
+            localStorage.removeItem("checkSpense");
+            navigate("/login");
+          }}
+          >
+          Log Out
+        </li>
+      ),
+    },
+  ];
 
   return (
     <div className="layout">
@@ -31,7 +33,7 @@ function DefaultLayout(props) {
           <h1 className="logo">checkSpense</h1>
         </div>
         <div>
-          <Dropdown overlay={menu} placement="bottomLeft">
+          <Dropdown menu = {{items,}} placement="bottomLeft">
             <button className='primary'>{user.name}</button>
           </Dropdown>
         </div>
