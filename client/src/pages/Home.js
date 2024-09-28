@@ -72,6 +72,7 @@ function Home() {
     }
   };
 
+  
   useEffect(() => {
     getTransactions();
   }, [frequency, selectedRange, type]);
